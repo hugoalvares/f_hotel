@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="UTF-8"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="js/jquery-2.1.1.js"></script>
+       <script src="menuplugin/jquery.sidr.min.js"></script>
+       <script src="js/controle.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/style.css" />
+       <link rel="stylesheet" href="menuplugin/stylesheets/jquery.sidr.dark.css">
+       <title>Hotel</title>
+    </head>
+    <body>
+        <div id="header">
+            <div id="simple-menu" href="#sidr" onclick="js.ajustaHeader();">
+                menu
+                serviços
+            </div>
+        </div>
+        <div id="body">
+            <div id="sidr">
+                <ul>
+                    <li><a href="#" onclick="js.abreCardapio();">cardápio</a></li>
+                    <li><a href="#" onclick="js.abreServicos();">serviço de quarto</a></li>
+                    <li><a href="#" onclick="js.abreAtividades();">atividades</a></li>
+                    <li><a href="#" onclick="js.abreInstalacoes();">instalações</a></li>
+                    <li><a href="#" onclick="js.abreParcial();">parcial do consumo</a></li>
+                    <li><a href="#" onclick="js.abreCheckout();">solicitar checkout</a></li>
+                    <li><a href="#" onclick="js.abreSolicitacoes();">minhas solicitações</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            refresh
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#simple-menu').sidr();
+        });
+    </script>
+</html>
