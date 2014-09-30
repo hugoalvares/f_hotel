@@ -38,12 +38,23 @@ var js = {
 
 	chamaServidor : function(data, callback) {
 		$.ajax({
-			url : "server.php",
-			data : data,
-			success : function(callback) {
-				callback();
+			url: "http://localhost:9090/",
+			type: "GET",
+			dataType: "json",
+			data: {"teste": "success"},
+			contentType: "application/json",
+			cache: false,
+			timeout: 30000,
+			complete: function() {
+				console.log('process complete');
+			},
+			success: function(data) {
+				console.log(data);
+				console.log('process sucess');
+			},
+			error: function() {
+				console.log('process error');
 			}
 		});
-	}
-
+  	}
 };
