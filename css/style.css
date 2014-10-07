@@ -1,5 +1,5 @@
 #header {
-    background: #eeeeff;
+    background: #1bbc9b;
     position: fixed;
     width: 100%;
     height: 50px;
@@ -8,12 +8,16 @@
     top: 0;
     z-index: 1;
 }
+
 #body { 
+	background-color: #ebf1f1;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family: "Segoe UI";
 }
+
 #footer{
-    background-color:red;
+    background-color:#1bbc9b;
     position:fixed;
     bottom:0px;
     left:0px;
@@ -21,32 +25,198 @@
     height:50px;
     margin-bottom:0px;
 }
+
 .menu{
-	margin-left: 42%;
+	margin-left: 52%;
 }
+
+.menu-icon {
+    background-image: url("../img/menu.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 90%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+/* Icones do menu */
+
+.icard {
+    background-image: url("../img/icard.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.aicon {
+    margin-left: 5px;
+    float: left;
+    clear: both;
+}
+
+.iserv {
+    background-image: url("../img/iserv.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.iserva {
+    float: left;
+    clear: both;
+}
+
+.iativ {
+    background-image: url("../img/iativ.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.iativa {
+    float: left;
+    clear: both;
+}
+
+.iinst {
+    background-image: url("../img/iinst.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.iinsta {
+    float: left;
+    clear: both;
+}
+
+.iparc {
+    background-image: url("../img/iparc.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.iparca {
+    float: left;
+    clear: both;
+}
+
+.isol {
+    background-image: url("../img/isol.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.isola {
+    float: left;
+    clear: both;
+}
+
+.imin {
+    background-image: url("../img/imin.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.imina {
+    float: left;
+    clear: both;
+}
+
+
+.thename {
+    line-height: 40px;
+    text-align: center;
+	margin-top: 15px;
+	margin-left: 5px;
+	color: white;
+	font-weight: bolder;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
 .titulo {
     float: left;
     margin-top: 15px;
     margin-left: 10px;
 }
-.conteudo {
-    margin-top: 60px;
-}
-.retangulo {
-    width: 95%;
-    margin-left: 2.5%;
-    background-color: blue;
-    height: 50px;
-    margin-bottom: 30px;
-}
-.refresh-icon {
-    margin: 0 auto;
-}
-.menu-icon {
-    background-image: url("../img/menu.png");
+
+.notification {
+	background-image: url("../img/noti.png");
+    background-repeat: no-repeat;
+    display: block;
     width: 40px;
     height: 40px;
     background-size: 100%;
-    float: left;
+    float: right;
     margin-top: 5px;
-}​
+    margin-right: 10px;
+}
+
+.conteudo {
+    background-color: transparent;
+    margin-top: 60px;
+}
+
+#footer {
+	height: 50px;
+	width: 100%;
+}
+
+.refresh-icon {
+	height: 40px;
+	width: 40px;
+	background-image: url("../img/refresh.png");
+	background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.apbloco {
+    width: 95%;
+    margin-left: 2.5%;
+    background-color: blue;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.blocotitle {
+	background-color:#1bbc9b;
+	color: white;
+	width: 200px; 
+	height: 40px;
+	font-weight: bold;
+}
+
+.blcttl {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    height: auto;
+    width: auto;
+
+
+}

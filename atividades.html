@@ -13,42 +13,33 @@
     <body>
         <div id="header">
             <div id="simple-menu" href="#sidr" onclick="js.ajustaHeader();">
-                <div class="menu-icon"></div>
-                <div class="titulo">atividades</div>
+               <div class="menu-icon"> </div>
+            <div class="thename"> Atividades </div>
+                <div class="notification"><a href="#" onclick="js.abreSolicitacoes();"> </a> </div>
             </div>
         </div>
         <div id="body">
             <div id="sidr">
                 <ul>
-                    <li><a href="#" onclick="js.abreCardapio();">cardápio</a></li>
-                    <li><a href="#" onclick="js.abreServicos();">serviço de quarto</a></li>
-                    <li><a href="#" onclick="js.abreAtividades();">atividades</a></li>
-                    <li><a href="#" onclick="js.abreInstalacoes();">instalações</a></li>
-                    <li><a href="#" onclick="js.abreParcial();">parcial do consumo</a></li>
-                    <li><a href="#" onclick="js.abreCheckout();">solicitar checkout</a></li>
-                    <li><a href="#" onclick="js.abreSolicitacoes();">minhas solicitações</a></li>
+                    <li><a href="#" onclick="js.abreCardapio();" class="aicon"><div class="icard"></div>cardápio</a></li>
+                    <li><a href="#" onclick="js.abreServicos();" class="aicon"><div class="iserv"></div>serviço de quarto</a></li>
+                    <li><a href="#" onclick="js.abreAtividades();" class="aicon"><div class="iativ"></div>atividades</a></li>
+                    <li><a href="#" onclick="js.abreInstalacoes();" class="aicon"><div class="iinst"></div>instalações</a></li>
+                    <li><a href="#" onclick="js.abreParcial();" class="aicon"><div class="iparc"></div>parcial do consumo</a></li>
+                    <li><a href="#" onclick="js.abreCheckout();" class="aicon"><div class="isol"></div>solicitar checkout</a></li>
                 </ul>
             </div>
             <div id="conteudo" class="conteudo">
-                <div class="retangulo" onclick="js.chamaServidor();">
-                    atividade1
-                </div>
-                <div class="retangulo">
-                    atividade2
-                </div>
-                <div class="retangulo">
-                    atividade3
-                </div>                                
+                                            
             </div>
         </div>
         <div id="footer">
-            <div class="refresh-icon">refresh</div>
+            <div class="refresh-icon"> </div>
         </div>
     </body>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#simple-menu').sidr();
-            js.buscaAtividades();
         });
     </script>
 </html>
