@@ -33,24 +33,62 @@ var js = {
 	},
 
 	buscaAtividades : function() {
+		// parâmetros para o backend
+		var params = {
+			"funcao" : "getAtividades"
+		};
 
+		// chama o backend
+		js.chamaServidor(
+			params,
+			// callback
+			function (atividades) {
+				var atividade = '';
+				var div = '';
+				for (var idx in atividades) {
+					atividade = atividades[idx];
+					div = div + "<div>" + atividade.nome + "</div>"
+				}
+				$("#conteudo").html(div);
+			}
+		);
 	},
 
-	chamaServidor : function(data, callback) {
+	salvaAtividade : function() {
+		var nome = $('#nome').val();
+		var preco = $('#preco').val();
+		var descicao = $('#descicao').val();
+
+		// parâmetros para o backend
+		var params = {
+			"funcao" : "getAtividades",
+			"nome" : nome,
+			"preco" : preco,
+			"descricao" : descricao
+		}
+
+		// chama o backend
+		js.chamaServidor(
+			params,
+			// callback
+			function () {
+				alert('Atividade salva com sucesso.');
+			}
+		);
+	},	
+
+	chamaServidor : function(params, callback) {
 		$.ajax({
 			url: "http://localhost:9090/",
 			type: "GET",
 			dataType: "json",
-			data: {"teste": "success"},
+			data: params,
 			contentType: "application/json",
 			cache: false,
 			timeout: 30000,
-			complete: function() {
-				console.log('process complete');
-			},
 			success: function(data) {
-				console.log(data);
 				console.log('process sucess');
+				callback(data);
 			},
 			error: function() {
 				console.log('process error');

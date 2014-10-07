@@ -2,29 +2,53 @@
 var express = require('express')
   , cors = require('cors')
   , app = express()
-  , mysql = require('mysql')
-  , connection  = require('express-myconnection'); 
+  , mysql = require('mysql'); 
 
 // banco
-app.use(    
-    connection(mysql, {
-        host: 'localhost',
-        user: 'root',
+var connection = mysql.createConnection(
+    {
+    	host     : 'localhost',
+        user     : 'root',
         password : '',
-        port : 3306,
-        database:'hotel'
-    }, 'request')
+        database : 'mydb',
+    }
 );
+
+var rodaSelect = function(sql, callback) {
+	connection.query(sql, function(err, rows, fields) {
+	    if (err) throw err;
+	 	callback(rows);
+	});
+}
 
 // libera acesso para o localhost
 app.use(cors());
 
-// webservice padrão
+// webservice
 app.get('/', function(req, res, next){
-	res.json({msg: 'teste'});
+	// busca atividades
+	if (req.query.funcao == 'getAtividades') {
+		rodaSelect('SELECT * FROM ATIVIDADE', function(atividades) {
+			res.send(atividades);
+		});	
+	}
+
+	// busca instalações
+	if (req.query.funcao == 'getInstalacoes') {
+		rodaSelect('SELECT * FROM INSTALACAO', function(instalacoes) {
+			res.send(instalacoes);
+		});	
+	}
+
+	// busca hóspedes
+	if (req.query.funcao == 'getHospedes') {
+		rodaSelect('SELECT * FROM HOSPEDE', function(hospedes) {
+			res.send(hospedes);
+		});	
+	}
 });
 
 // iniciando o servidor
 app.listen(9090, function(){
-	console.log('CORS-enabled web server listening on port 9090');
+	console.log('webservice rodando na porta 9090');
 });
