@@ -1,5 +1,15 @@
 var js = {
 
+  	modo : 'gerente',
+
+  	modoGerente : function() {
+  		if (js.modo == "gerente") {
+  			return true;
+  		} else {
+  			return false;
+  		}
+  	},
+
 	ajustaHeader : function() {
 		$("#simple-menu").toggleClass('menu');
 	},
@@ -10,10 +20,6 @@ var js = {
 
 	abreServicos : function() {
 		window.location = 'servicos.html';
-	},
-
-	abreAtividades : function() {
-		window.location = 'atividades.html';
 	},
 
 	abreInstalacoes : function() {
@@ -32,50 +38,9 @@ var js = {
 		window.location = 'solicitacoes.html';
 	},
 
-	buscaAtividades : function() {
-		// parâmetros para o backend
-		var params = {
-			"funcao" : "getAtividades"
-		};
-
-		// chama o backend
-		js.chamaServidor(
-			params,
-			// callback
-			function (atividades) {
-				var atividade = '';
-				var div = '';
-				for (var idx in atividades) {
-					atividade = atividades[idx];
-					div = div + "<div>" + atividade.nome + "</div>"
-				}
-				$("#conteudo").html(div);
-			}
-		);
+	abreSolicitacoes : function() {
+		window.location = 'solicitacoes.html';
 	},
-
-	salvaAtividade : function() {
-		var nome = $('#nome').val();
-		var preco = $('#preco').val();
-		var descicao = $('#descicao').val();
-
-		// parâmetros para o backend
-		var params = {
-			"funcao" : "getAtividades",
-			"nome" : nome,
-			"preco" : preco,
-			"descricao" : descricao
-		}
-
-		// chama o backend
-		js.chamaServidor(
-			params,
-			// callback
-			function () {
-				alert('Atividade salva com sucesso.');
-			}
-		);
-	},	
 
 	chamaServidor : function(params, callback) {
 		$.ajax({
@@ -95,4 +60,5 @@ var js = {
 			}
 		});
   	}
+
 };

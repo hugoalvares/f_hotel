@@ -15,7 +15,7 @@
         <div id="header">
             <div id="simple-menu" href="#sidr" onclick="js.ajustaHeader();">
                 <div class="menu-icon"></div>
-                <div class="titulo">atividades</div>
+                <div class="titulo">cadastro de atividade</div>
             </div>
         </div>
         <div id="body">
@@ -31,7 +31,10 @@
                 </ul>
             </div>
             <div id="conteudo" class="conteudo">
-                                          
+                <div id="id"></div>
+                <div id="nome"></div>
+                <div id="preco"></div>
+                <div id="descricao"></div>
             </div>
         </div>
         <div id="footer">
@@ -41,7 +44,6 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#simple-menu').sidr();
-            atividade.buscaAtividades();
         });
     </script>
 </html>
