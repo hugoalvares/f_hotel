@@ -35,7 +35,7 @@ var atividade = {
 		var div = '';
 		for (var idx in atividades) {
 			atividade = atividades[idx];
-			div = div + '<div id="' + atividade.id + '" onclick="atividade.clickAtividade(this.id);">' + atividade.nome + '</div>'
+			div = div + '<div class="apbloco" id="' + atividade.id + '" onclick="atividade.clickAtividade(this.id);"> <div class="blocotitle"> <div class="blcttl">' + atividade.nome + '</div></div></div>';
 		}
 		$("#conteudo").html(div);
 	},
