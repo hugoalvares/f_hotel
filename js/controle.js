@@ -29,13 +29,13 @@ var js = {
 	abreParcial : function() {
 		window.location = 'parcial.html';
 	},
-
+    
+    abreAtividades : function() {
+		window.location = 'atividades.html';
+	},
+    
 	abreCheckout : function() {
 		window.location = 'checkout.html';
-	},
-
-	abreSolicitacoes : function() {
-		window.location = 'solicitacoes.html';
 	},
 
 	abreSolicitacoes : function() {

@@ -9,6 +9,7 @@
     z-index: 1;
 }
 
+
 #body { 
 	background-color: #ebf1f1;
     margin-top: 50px;
@@ -40,6 +41,7 @@
     float: left;
     margin-top: 5px;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Icones do menu */
@@ -68,11 +70,6 @@
     float: left;
 }
 
-.iserva {
-    float: left;
-    clear: both;
-}
-
 .iativ {
     background-image: url("../img/iativ.png");
     background-repeat: no-repeat;
@@ -80,11 +77,6 @@
     height: 40px;
     background-size: 100%;
     float: left;
-}
-
-.iativa {
-    float: left;
-    clear: both;
 }
 
 .iinst {
@@ -96,11 +88,6 @@
     float: left;
 }
 
-.iinsta {
-    float: left;
-    clear: both;
-}
-
 .iparc {
     background-image: url("../img/iparc.png");
     background-repeat: no-repeat;
@@ -108,11 +95,6 @@
     height: 40px;
     background-size: 100%;
     float: left;
-}
-
-.iparca {
-    float: left;
-    clear: both;
 }
 
 .isol {
@@ -124,11 +106,6 @@
     float: left;
 }
 
-.isola {
-    float: left;
-    clear: both;
-}
-
 .imin {
     background-image: url("../img/imin.png");
     background-repeat: no-repeat;
@@ -138,14 +115,9 @@
     float: left;
 }
 
-.imina {
-    float: left;
-    clear: both;
-}
-
-
 .thename {
     line-height: 40px;
+    text-align: center;
     font-family: "Segoe UI";
     font-size: 1.0em;
     text-transform: uppercase;
@@ -174,6 +146,7 @@
     float: right;
     margin-top: 5px;
     margin-right: 10px;
+    z-index: 1;
 }
 
 .conteudo {
