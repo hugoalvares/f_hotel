@@ -193,3 +193,58 @@
     font-size: 1.0em;
     text-transform: uppercase;
 }
+
+.titdesc {
+    margin-left: 12px;
+    font-weight: 800;
+    color: #16a086;
+}
+
+.descativ {
+    width: 95%;   
+    color: #4d8b7c;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.list2col {
+    line-height: 35px;
+    text-align: center;
+    width: 95%;
+    color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.l2chead {
+    background-color: #16a086;
+}
+
+.l2chesq {
+    float: left;
+    width: 30%;
+    background-color: #16a086;
+}
+
+.l2chdir {
+    float: left;
+    width: 70%;
+    background-color: #16a086;
+}
+
+.l2cesq {
+    margin-top: 5px;
+    float: left;
+    width: 30%;
+}
+
+.l2cdir {
+    margin-top: 5px;
+    float: left;
+    width: 70%;
+}
+
+.l2crow {
+    margin-top: 1px;
+    background-color: #1cbb9b;
+}
