@@ -5,6 +5,8 @@ var jsGrupo = {
 	abreGrupos : function() {
 		// troca o conteúdo da página
 		js.abreTela('lista.html');
+		// troca o rodapé pra lista
+		js.trocaRodape('lista');
 		// busca e constrói as instalações
 		jsGrupo.buscaGrupos(function(grupos){
 			jsGrupo.montaGrupos(grupos);

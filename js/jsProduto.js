@@ -5,6 +5,8 @@ var jsProduto = {
 	abreProdutos : function() {
 		// troca o conteúdo da página
 		js.abreTela('lista.html');
+		// troca o rodapé pra lista
+		js.trocaRodape('lista');
 		// busca e constrói as instalações
 		jsProduto.buscaProdutos();
 		// ajusta localização do header
