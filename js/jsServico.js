@@ -10,7 +10,7 @@ var jsServico = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('serviços');		
+		js.trocaTitulo('serviços', 'iserv');		
 	},
 
 	buscaServicos : function() {
@@ -34,7 +34,7 @@ var jsServico = {
 		var div = '';
 		for (var idx in servicos) {
 			servico = servicos[idx];
-			div = div + '<div id="' + servico.idservico + '" onclick="jsServico.clickServico(this.id);">' + servico.nome + '</div>';
+			div = div + js.montaItemLista(servico.idservico, 'jsServico.clickServico(this.id);', servico.nome);
 		}
 		div = div + '<div id="tela" name="listaServicos"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsServico = {
 
 	abreCadastroServico : function() {
 		js.abreTela('cadastroServico.html');
-		js.trocaTitulo('cadastro de serviço');
+		js.trocaTitulo('cadastro de serviço', 'iserv');
 	},
 
 	abreAlteraServico : function() {
@@ -65,7 +65,7 @@ var jsServico = {
 
 	abreDetalheServico : function(servico) {
 		js.abreTela('detalheServico.html');
-		js.trocaTitulo(servico.nome);	
+		js.trocaTitulo(servico.nome, 'iserv');	
 	},
 
 	buscaUmServico : function(idservico) {

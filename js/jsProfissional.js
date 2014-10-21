@@ -10,7 +10,7 @@ var jsProfissional = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('profissionais');		
+		js.trocaTitulo('profissionais', 'definir');		
 	},
 
 	buscaProfissionais : function() {
@@ -34,7 +34,7 @@ var jsProfissional = {
 		var div = '';
 		for (var idx in profissionais) {
 			profissional = profissionais[idx];
-			div = div + '<div id="' + profissional.idprofissional + '" onclick="jsProfissional.clickProfissional(this.id);">' + profissional.nome + '</div>';
+			div = div + js.montaItemLista(profissional.idprofissional, 'jsProfissional.clickProfissional(this.id);', profissional.nome);
 		}
 		div = div + '<div id="tela" name="listaProfissionais"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsProfissional = {
 
 	abreCadastroProfissional : function() {
 		js.abreTela('cadastroProfissional.html');
-		js.trocaTitulo('cadastro de profissional');
+		js.trocaTitulo('cadastro de profissional', 'definir');
 	},	
 
 	abreAlteraProfissional : function() {

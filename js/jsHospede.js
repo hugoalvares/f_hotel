@@ -10,7 +10,7 @@ var jsHospede = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('hóspedes');		
+		js.trocaTitulo('hóspedes', 'definir');		
 	},
 
 	buscaHospedes : function() {
@@ -34,7 +34,7 @@ var jsHospede = {
 		var div = '';
 		for (var idx in hospedes) {
 			hospede = hospedes[idx];
-			div = div + '<div id="' + hospede.idhospede + '" onclick="jsHospede.clickHospede(this.id);">' + hospede.nome + '</div>';
+			div = div + js.montaItemLista(hospede.idhospede, 'jsHospede.clickHospede(this.id);', hospede.nome);
 		}
 		div = div + '<div id="tela" name="listaHospedes"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsHospede = {
 
 	abreCadastroHospede : function() {
 		js.abreTela('cadastroHospede.html');
-		js.trocaTitulo('cadastro de hóspede');
+		js.trocaTitulo('cadastro de hóspede', 'definir');
 	},				
 
 	abreAlteraHospede : function() {

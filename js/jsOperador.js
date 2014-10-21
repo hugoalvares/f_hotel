@@ -10,7 +10,7 @@ var jsOperador = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('operadores');		
+		js.trocaTitulo('operadores', 'definir');		
 	},
 
 	buscaOperadores : function() {
@@ -34,7 +34,7 @@ var jsOperador = {
 		var div = '';
 		for (var idx in operadores) {
 			operador = operadores[idx];
-			div = div + '<div id="' + operador.idoperador + '" onclick="jsOperador.clickOperador(this.id);">' + operador.nome + '</div>';
+			div = div + js.montaItemLista(operador.idoperador, 'jsOperador.clickOperador(this.id);', operador.nome);
 		}
 		div = div + '<div id="tela" name="listaOperadores"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsOperador = {
 
 	abreCadastroOperador : function() {
 		js.abreTela('cadastroOperador.html');
-		js.trocaTitulo('cadastro de operador');
+		js.trocaTitulo('cadastro de operador', 'definir');
 	},			
 
 	abreAlteraOperador : function() {

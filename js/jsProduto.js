@@ -10,7 +10,7 @@ var jsProduto = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('produtos');		
+		js.trocaTitulo('produtos', 'icard');		
 	},
 
 	buscaProdutos : function() {
@@ -34,7 +34,7 @@ var jsProduto = {
 		var div = '';
 		for (var idx in produtos) {
 			produto = produtos[idx];
-			div = div + '<div id="' + produto.idproduto + '" onclick="jsProduto.clickProduto(this.id);">' + produto.nome + '</div>';
+			div = div + js.montaItemLista(produto.idproduto, 'jsProduto.clickProduto(this.id);', produto.nome);
 		}
 		div = div + '<div id="tela" name="listaProdutos"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsProduto = {
 
 	abreCadastroProduto : function() {
 		js.abreTela('cadastroProduto.html');
-		js.trocaTitulo('cadastro de produto');
+		js.trocaTitulo('cadastro de produto', 'icard');
 	},		
 
 	abreAlteraProduto : function() {

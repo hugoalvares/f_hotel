@@ -10,7 +10,7 @@ var jsAtividade = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('atividades');
+		js.trocaTitulo('atividades', 'iativ');
 	},
 
 	buscaAtividades : function() {
@@ -34,7 +34,7 @@ var jsAtividade = {
 		var div = '';
 		for (var idx in atividades) {
 			atividade = atividades[idx];
-			div = div + '<div id="' + atividade.idatividade + '" onclick="jsAtividade.clickAtividade(this.id);">' + atividade.nome + '</div>';
+			div = div + js.montaItemLista(atividade.idatividade, 'jsAtividade.clickAtividade(this.id);', atividade.nome);
 		}
 		div = div + '<div id="tela" name="listaAtividades"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsAtividade = {
 
 	abreCadastroAtividade : function() {
 		js.abreTela('cadastroAtividade.html');
-		js.trocaTitulo('cadastro de atividade');
+		js.trocaTitulo('cadastro de atividade', 'iativ');
 	},			
 
 	abreAlteraAtividade : function() {

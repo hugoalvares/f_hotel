@@ -9,11 +9,13 @@
     z-index: 1;
 }
 
+
 #body { 
 	background-color: #ebf1f1;
     margin-top: 50px;
     margin-bottom: 50px;
     font-family: "Segoe UI";
+    font-size: 1.0em;
 }
 
 #footer{
@@ -39,6 +41,7 @@
     float: left;
     margin-top: 5px;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Icones do menu */
@@ -67,11 +70,6 @@
     float: left;
 }
 
-.iserva {
-    float: left;
-    clear: both;
-}
-
 .iativ {
     background-image: url("../img/iativ.png");
     background-repeat: no-repeat;
@@ -79,11 +77,6 @@
     height: 40px;
     background-size: 100%;
     float: left;
-}
-
-.iativa {
-    float: left;
-    clear: both;
 }
 
 .iinst {
@@ -95,11 +88,6 @@
     float: left;
 }
 
-.iinsta {
-    float: left;
-    clear: both;
-}
-
 .iparc {
     background-image: url("../img/iparc.png");
     background-repeat: no-repeat;
@@ -107,11 +95,6 @@
     height: 40px;
     background-size: 100%;
     float: left;
-}
-
-.iparca {
-    float: left;
-    clear: both;
 }
 
 .isol {
@@ -123,11 +106,6 @@
     float: left;
 }
 
-.isola {
-    float: left;
-    clear: both;
-}
-
 .imin {
     background-image: url("../img/imin.png");
     background-repeat: no-repeat;
@@ -137,20 +115,15 @@
     float: left;
 }
 
-.imina {
-    float: left;
-    clear: both;
-}
-
-
 .thename {
     line-height: 40px;
     text-align: center;
-	margin-top: 15px;
-	margin-left: 5px;
-	color: white;
-	font-weight: bolder;
-	float: left;
+    font-family: "Segoe UI";
+    font-size: 1.0em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    float: left;
 }
 
 .clear {
@@ -173,10 +146,11 @@
     float: right;
     margin-top: 5px;
     margin-right: 10px;
+    z-index: 1;
 }
 
 .conteudo {
-    background-color: transparent;
+    background-color: #ebf1f1;
     margin-top: 60px;
 }
 
@@ -215,6 +189,62 @@
     display: block;
     line-height: 40px;
     text-align: center;
-    height: auto;
-    width: auto;
+    font-family: "Segoe UI";
+    font-size: 1.0em;
+    text-transform: uppercase;
+}
+
+.titdesc {
+    margin-left: 12px;
+    font-weight: 800;
+    color: #16a086;
+}
+
+.descativ {
+    width: 95%;   
+    color: #4d8b7c;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.list2col {
+    line-height: 35px;
+    text-align: center;
+    width: 95%;
+    color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.l2chead {
+    background-color: #16a086;
+}
+
+.l2chesq {
+    float: left;
+    width: 30%;
+    background-color: #16a086;
+}
+
+.l2chdir {
+    float: left;
+    width: 70%;
+    background-color: #16a086;
+}
+
+.l2cesq {
+    margin-top: 5px;
+    float: left;
+    width: 30%;
+}
+
+.l2cdir {
+    margin-top: 5px;
+    float: left;
+    width: 70%;
+}
+
+.l2crow {
+    margin-top: 1px;
+    background-color: #1cbb9b;
 }

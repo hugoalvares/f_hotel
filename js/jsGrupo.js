@@ -12,7 +12,7 @@ var jsGrupo = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('grupos');		
+		js.trocaTitulo('grupos', 'definir');		
 	},
 
 	buscaGrupos : function(callback) {
@@ -36,7 +36,7 @@ var jsGrupo = {
 		var div = '';
 		for (var idx in grupos) {
 			grupo = grupos[idx];
-			div = div + '<div id="' + grupo.idgrupo + '" onclick="jsGrupo.clickGrupo(this.id);">' + grupo.nome + '</div>';
+			div = div + js.montaItemLista(grupo.idgrupo, 'jsGrupo.clickGrupo(this.id);', grupo.nome);
 		}
 		div = div + '<div id="tela" name="listaGrupos"></div>';
 		$("#conteudo").html(div);
@@ -69,7 +69,7 @@ var jsGrupo = {
 
 	abreCadastroGrupo : function() {
 		js.abreTela('cadastroGrupo.html');
-		js.trocaTitulo('cadastro de grupo');
+		js.trocaTitulo('cadastro de grupo', 'definir');
 	},			
 
 	abreAlteraGrupo : function() {

@@ -1,6 +1,6 @@
 var js = {
 
-  	modo : 'user',
+  	modo : 'gerente',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
 
@@ -14,6 +14,34 @@ var js = {
 
 	ajustaHeader : function() {
 		$("#simple-menu").toggleClass('menu');
+	},
+
+	abreCardapio : function() {
+		window.location = 'cardapio.html';
+	},
+
+	abreServicos : function() {
+		window.location = 'servicos.html';
+	},
+
+	abreInstalacoes : function() {
+		window.location = 'instalacoes.html';
+	},
+
+	abreParcial : function() {
+		window.location = 'parcial.html';
+	},
+    
+    abreAtividades : function() {
+		window.location = 'atividades.html';
+	},
+    
+	abreCheckout : function() {
+		window.location = 'checkout.html';
+	},
+
+	abreSolicitacoes : function() {
+		window.location = 'solicitacoes.html';
 	},
 
 	chamaServidor : function(params, callback) {
@@ -157,8 +185,20 @@ var js = {
         }
     },
 
-    trocaTitulo : function(novoTitulo) {
+    trocaTitulo : function(novoTitulo, novoIcone) {
+    	novoTitulo = '&nbsp' + novoTitulo;
     	$('#titulo').html(novoTitulo);
+
+    	// tira o ícone atual
+    	var iconeAtual = $('#tituloIcone').attr('class');
+    	$('#tituloIcone').toggleClass(iconeAtual);
+
+    	// coloca o novo ícone
+    	$('#tituloIcone').toggleClass(novoIcone);
+    },
+
+    montaItemLista : function(id, funcao, nome) {
+		return '<div class="apbloco" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
     }
 
 };

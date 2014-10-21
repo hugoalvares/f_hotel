@@ -10,7 +10,7 @@ var jsInstalacao = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('instalações');		
+		js.trocaTitulo('instalações', 'iinst');		
 	},
 
 	buscaInstalacoes : function() {
@@ -34,7 +34,7 @@ var jsInstalacao = {
 		var div = '';
 		for (var idx in instalacoes) {
 			instalacao = instalacoes[idx];
-			div = div + '<div id="' + instalacao.idinstalacao + '" onclick="jsInstalacao.clickInstalacao(this.id);">' + instalacao.nome + '</div>';
+			div = div + js.montaItemLista(instalacao.idinstalacao, 'jsInstalacao.clickInstalacao(this.id);', instalacao.nome);
 		}
 		div = div + '<div id="tela" name="listaInstalacoes"></div>';
 		$("#conteudo").html(div);
@@ -53,7 +53,7 @@ var jsInstalacao = {
 
 	abreCadastroInstalacao : function() {
 		js.abreTela('cadastroInstalacao.html');
-		js.trocaTitulo('cadastro de instalação');
+		js.trocaTitulo('cadastro de instalação', 'iinst');
 	},			
 
 	abreAlteraInstalacao : function() {
