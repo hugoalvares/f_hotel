@@ -62,15 +62,21 @@ var jsServico = {
 		// troca o conteúdo da página
 		jsServico.abreCadastroServico();
 		// preenche os campos
-		jsServico.buscaUmServico(jsServico.servicoAtual);
+		jsServico.buscaUmServico(jsServico.servicoAtual, function(servico){
+			js.preencheFormulario(servico);
+			js.trocaRodape('cadastro');
+		});
 	},	
 
-	abreDetalheServico : function(servico) {
-		js.abreTela('detalheServico.html');
-		js.trocaTitulo(servico.nome, 'iserv');	
+	abreDetalheServico : function(idservico) {
+		jsServico.buscaUmServico(idservico, function(servico) {
+			// tela, título, ícone, footer
+			js.trocaTela('detalheServico.html', servico.nome, 'iserv', 'servico');
+			js.preencheDetalhe(servico);
+		});		
 	},
 
-	buscaUmServico : function(idservico) {
+	buscaUmServico : function(idservico, callback) {
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "buscaUmServico",
@@ -82,8 +88,7 @@ var jsServico = {
 			params,
 			// callback
 			function (servico) {
-				js.preencheFormulario(servico);
-				js.trocaRodape('cadastro');
+				callback(servico);
 			}
 		);
 	},

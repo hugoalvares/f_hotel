@@ -1,6 +1,6 @@
 var js = {
 
-  	modo : 'gerente',
+  	modo : 'user',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
 
@@ -14,34 +14,6 @@ var js = {
 
 	ajustaHeader : function() {
 		$("#simple-menu").toggleClass('menu');
-	},
-
-	abreCardapio : function() {
-		window.location = 'cardapio.html';
-	},
-
-	abreServicos : function() {
-		window.location = 'servicos.html';
-	},
-
-	abreInstalacoes : function() {
-		window.location = 'instalacoes.html';
-	},
-
-	abreParcial : function() {
-		window.location = 'parcial.html';
-	},
-    
-    abreAtividades : function() {
-		window.location = 'atividades.html';
-	},
-    
-	abreCheckout : function() {
-		window.location = 'checkout.html';
-	},
-
-	abreSolicitacoes : function() {
-		window.location = 'solicitacoes.html';
 	},
 
 	chamaServidor : function(params, callback) {
@@ -72,6 +44,15 @@ var js = {
   		}
   	},
 
+	preencheDetalhe : function(dados) {
+  		// preenche o formulário de cadastro, os campos no html (id) devem estar com os mesmos nomes que no banco
+  		var valor;
+  		for (var campo in dados) {
+  			valor = dados[campo];
+  			$('#' + campo).html(valor);
+  		}
+  	},
+
   	trocaRodape : function(tipo) {
   		if (tipo == 'cadastro') {
 			$('#footer').load('footerCadastro.html');  			
@@ -81,6 +62,8 @@ var js = {
             } else {
                 $('#footer').load('footerLista.html');      
             }
+  		} else if (tipo == 'servico') {
+  			$('#footer').load('footerServico.html');      
   		}
   	},
 
@@ -88,6 +71,12 @@ var js = {
   		js.telaAnterior = js.telaAtual;
   		js.telaAtual = tela;
 		$('#conteudo').load(tela);
+  	},
+
+  	trocaTela : function(tela, titulo, icon, rodape) {
+  		js.abreTela(tela);
+  		js.trocaTitulo(titulo, icon);
+  		js.trocaRodape(rodape);
   	},
 
   	abreTelaAnterior : function() {  		
