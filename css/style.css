@@ -1,3 +1,9 @@
+body { 
+	background-color: #ebf1f1;
+    font-family: "Segoe UI";
+    font-size: 1.0em;
+}
+
 #header {
     background: #1bbc9b;
     position: fixed;
@@ -14,8 +20,10 @@
 	background-color: #ebf1f1;
     margin-top: 50px;
     margin-bottom: 50px;
-    font-family: "Segoe UI";
-    font-size: 1.0em;
+}
+
+#conteudo {
+    background-color: #ebf1f1;
 }
 
 #footer{
@@ -154,7 +162,6 @@
 }
 
 .conteudo {
-    background-color: #ebf1f1;
     margin-top: 60px;
 }
 
@@ -251,4 +258,53 @@
 .l2crow {
     margin-top: 1px;
     background-color: #1cbb9b;
+}
+
+.voltar {
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    font-weight: 550;
+    margin-left: 20px;
+}
+
+.salvar {
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+    font-weight: 550;
+    margin-right: 20px;
+}
+
+.newitem {
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 550;
+    float: left;
+    margin-left: 20px;
+    
+}
+
+.thecampo {
+    height: 50px;
+    width: 300px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.ccadi {
+    line-height: 25px;
+    width: 200px;
+    color: #1bbc9b;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+input {
+    line-height: 25px;
+    width: 200px;
 }

@@ -12,7 +12,7 @@ var jsOperador = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('operadores', 'definir');		
+		js.trocaTitulo('operadores', 'ioper');		
 	},
 
 	buscaOperadores : function() {
@@ -55,7 +55,7 @@ var jsOperador = {
 
 	abreCadastroOperador : function() {
 		js.abreTela('cadastroOperador.html');
-		js.trocaTitulo('cadastro de operador', 'definir');
+		js.trocaTitulo('cadastro de operador', 'ioper');
 	},			
 
 	abreAlteraOperador : function() {

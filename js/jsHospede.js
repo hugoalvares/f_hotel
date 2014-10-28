@@ -12,7 +12,7 @@ var jsHospede = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('hóspedes', 'definir');		
+		js.trocaTitulo('hóspedes', 'ihosp');		
 	},
 
 	buscaHospedes : function() {
@@ -55,7 +55,7 @@ var jsHospede = {
 
 	abreCadastroHospede : function() {
 		js.abreTela('cadastroHospede.html');
-		js.trocaTitulo('cadastro de hóspede', 'definir');
+		js.trocaTitulo('cadastro de hóspede', 'ihosp');
 	},				
 
 	abreAlteraHospede : function() {

@@ -1,6 +1,6 @@
 var js = {
 
-  	modo : 'user',
+  	modo : 'gerente',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
   	login : {},
