@@ -73,6 +73,33 @@ body {
     clear: both;
 }
 
+.ihosp {
+    background-image: url("../img/ihosp.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.ioper {
+    background-image: url("../img/ioper.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
+.iprof {
+    background-image: url("../img/iprof.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    float: left;
+}
+
 .iserv {
     background-image: url("../img/iserv.png");
     background-repeat: no-repeat;
