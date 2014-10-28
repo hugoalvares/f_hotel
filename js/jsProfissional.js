@@ -12,7 +12,7 @@ var jsProfissional = {
 		// ajusta localização do header
 		js.ajustaHeader();
 		// troca o título da página
-		js.trocaTitulo('profissionais', 'definir');		
+		js.trocaTitulo('profissionais', 'iprof');		
 	},
 
 	buscaProfissionais : function() {
@@ -55,7 +55,7 @@ var jsProfissional = {
 
 	abreCadastroProfissional : function() {
 		js.abreTela('cadastroProfissional.html');
-		js.trocaTitulo('cadastro de profissional', 'definir');
+		js.trocaTitulo('cadastro de profissional', 'iprof');
 	},	
 
 	abreAlteraProfissional : function() {
