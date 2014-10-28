@@ -72,7 +72,9 @@ var jsServico = {
 		jsServico.buscaUmServico(idservico, function(servico) {
 			// tela, título, ícone, footer
 			js.trocaTela('detalheServico.html', servico.nome, 'iserv', 'servico');
-			js.preencheDetalhe(servico);
+			setTimeout(function(){
+				js.preencheDetalhe(servico);
+			}, 100);
 		});		
 	},
 
@@ -123,6 +125,30 @@ var jsServico = {
 				js.abreTelaAnterior();
 			}
 		);
-	}	
+	},
+
+	solicitaServico : function() {
+		var idservico = $('#idservico').html();
+		var quantidade = $('#quantidade').val();
+		var idhospede = js.login.idhospede;
+
+		// parâmetros para o backend
+		var params = {
+			"funcao" : "solicitaServico",
+			"idservico" : idservico,
+			"idhospede" : idhospede,
+			"quantidade" : quantidade
+		}
+
+		// chama o backend
+		js.chamaServidor(
+			params,
+			// callback
+			function () {
+				alert('Serviço solicitado com sucesso.');
+				js.abreTelaAnterior();
+			}
+		);	
+	}
 
 };

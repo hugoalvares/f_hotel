@@ -3,6 +3,40 @@ var js = {
   	modo : 'user',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
+  	login : {},
+  	telas : {
+  		// geral
+		'lista.html' : '/hotel/html/lista.html',
+
+		// gerente
+		'cadastroAtividade.html' : '/hotel/html/gerente/cadastroAtividade.html',
+		'cadastroGrupo.html' : '/hotel/html/gerente/cadastroGrupo.html',
+		'cadastroHospede.html' : '/hotel/html/gerente/cadastroHospede.html',
+		'cadastroInstalacao.html' : '/hotel/html/gerente/cadastroInstalacao.html',
+		'cadastroOperador.html' : '/hotel/html/gerente/cadastroOperador.html',
+		'cadastroProduto.html' : '/hotel/html/gerente/cadastroProduto.html',
+		'cadastroProfissional.html' : '/hotel/html/gerente/cadastroProfissional.html',
+		'cadastroServico.html' : '/hotel/html/gerente/cadastroServico.html',
+		'inicioGerente.html' : '/hotel/html/gerente/inicioGerente.html',
+
+		// user
+		'cardapio.html' : '/hotel/html/user/cardapio.html',
+		'checkout.html' : '/hotel/html/user/checkout.html',
+		'detalheAtividade.html' : '/hotel/html/user/detalheAtividade.html',
+		'detalheServico.html' : '/hotel/html/user/detalheServico.html',
+		'inicioUser.html' : '/hotel/html/user/inicioUser.html',
+		'parcial.html' : '/hotel/html/user/parcial.html'
+  	},
+  	footers : {
+  		'footerCadastro.html' : '/hotel/html/footer/footerCadastro.html',
+  		'footerLista.html' : '/hotel/html/footer/footerLista.html',
+  		'footerListaGerente.html' : '/hotel/html/footer/footerListaGerente.html',
+  		'footerServico.html' : '/hotel/html/footer/footerServico.html'
+  	},
+  	menus : {
+  		'menu.html' : '/hotel/html/menu/menu.html',
+  		'menuGerente.html' : '/hotel/html/menu/menuGerente.html'
+  	},
 
   	modoGerente : function() {
   		if (js.modo == "gerente") {
@@ -55,22 +89,23 @@ var js = {
 
   	trocaRodape : function(tipo) {
   		if (tipo == 'cadastro') {
-			$('#footer').load('footerCadastro.html');  			
+			$('#footer').load(js.footers['footerCadastro.html']);  			
   		} else if (tipo == 'lista') {
             if (js.modoGerente()) {
-                $('#footer').load('footerListaGerente.html');      
+                $('#footer').load(js.footers['footerListaGerente.html']);      
             } else {
-                $('#footer').load('footerLista.html');      
+                $('#footer').load(js.footers['footerLista.html']);      
             }
   		} else if (tipo == 'servico') {
-  			$('#footer').load('footerServico.html');      
+  			$('#footer').load(js.footers['footerServico.html']);      
   		}
   	},
 
   	abreTela : function(tela) {
   		js.telaAnterior = js.telaAtual;
   		js.telaAtual = tela;
-		$('#conteudo').load(tela);
+
+		$('#conteudo').load(js.telas[tela]);
   	},
 
   	trocaTela : function(tela, titulo, icon, rodape) {
@@ -116,6 +151,10 @@ var js = {
             jsProduto.abreProdutos();
             js.ajustaHeader();
             js.trocaRodape('lista');       
+        } else if (js.telaAnterior == 'detalheServico.html') {
+        	jsServico.abreServicos();
+        	js.ajustaHeader();
+        	js.trocaRodape('lista');
         }
   	},
 
@@ -168,9 +207,9 @@ var js = {
 
     preencheMenu : function() {
         if (js.modoGerente()) {
-            $('#itensMenu').load('menuGerente.html');           
+            $('#itensMenu').load(js.menus['menuGerente.html']);           
         } else {
-            $('#itensMenu').load('menu.html');           
+            $('#itensMenu').load(js.menus['menu.html']);           
         }
     },
 
@@ -188,6 +227,11 @@ var js = {
 
     montaItemLista : function(id, funcao, nome) {
 		return '<div class="apbloco" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
+    },
+
+    abreTelaInicial : function() {
+    	js.trocaTela('inicioGerente.html', 'MYROOM', '', 'lista');
+    	js.preencheMenu();
     }
 
 };

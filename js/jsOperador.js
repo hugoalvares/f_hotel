@@ -109,6 +109,34 @@ var jsOperador = {
 				js.abreTelaAnterior();
 			}
 		);
-	}	
+	},
+
+	loginOperador : function() {
+		var idoperador = $('#idoperador').val();
+		var senha = $('#senha').val();
+
+		// parâmetros para o backend
+		var params = {
+			"funcao" : "loginOperador",
+			"idoperador" : idoperador,
+			"senha" : senha
+		}
+
+		// chama o backend
+		js.chamaServidor(
+			params,
+			// callback
+			function (loginOk) {
+				if (loginOk) {
+					js.abreTelaInicial();
+					js.login = {
+						'idoperador' : idoperador
+					};
+				} else {
+					alert('Usuário ou senha inválido.');
+				}
+			}
+		);
+	}
 
 };

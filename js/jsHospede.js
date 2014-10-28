@@ -109,6 +109,34 @@ var jsHospede = {
 				js.abreTelaAnterior();
 			}
 		);
-	}	
+	},
+
+	loginHospede : function() {
+		var idhospede = $('#idhospede').val();
+		var senha = $('#senha').val();
+
+		// parâmetros para o backend
+		var params = {
+			"funcao" : "loginHospede",
+			"idhospede" : idhospede,
+			"senha" : senha
+		}
+
+		// chama o backend
+		js.chamaServidor(
+			params,
+			// callback
+			function (loginOk) {
+				if (loginOk) {
+					js.abreTelaInicial();
+					js.login = {
+						'idhospede' : idhospede
+					};
+				} else {
+					alert('Usuário ou senha inválido.');
+				}
+			}
+		);
+	}
 
 };

@@ -32,6 +32,10 @@
 	margin-left: 52%;
 }
 
+.hidden {
+	display: none;
+}
+
 .menu-icon {
     background-image: url("../img/menu.png");
     background-repeat: no-repeat;

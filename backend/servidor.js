@@ -146,6 +146,18 @@ app.get('/', function(req, res, next){
 			res.send({});
 		});	
 	}
+
+	// login do hóspede
+	if (req.query.funcao == 'loginHospede') {
+		var sql = 'SELECT SENHA FROM HOSPEDE WHERE IDHOSPEDE = ' + req.query.idhospede;
+		rodaSql(sql, function(hospede) {
+			var response = false;
+			if (hospede.length > 0) {
+				response = hospede[0]['SENHA'] === req.query.senha;
+			}
+			res.send(response);
+		});	
+	}	
 	// --------------------------------------------------------------------------------	
 
 	// ------------------------------------ OPERADORES --------------------------------
@@ -174,6 +186,18 @@ app.get('/', function(req, res, next){
 		}
 		rodaSql(sql, function() {
 			res.send({});
+		});	
+	}
+
+	// login do operador
+	if (req.query.funcao == 'loginOperador') {
+		var sql = 'SELECT SENHA FROM OPERADOR WHERE IDOPERADOR = ' + req.query.idoperador;
+		rodaSql(sql, function(operador) {
+			var response = false;
+			if (operador.length > 0) {
+				response = operador[0]['SENHA'] === req.query.senha;
+			}
+			res.send(response);			
 		});	
 	}
 	// --------------------------------------------------------------------------------		
@@ -268,7 +292,15 @@ app.get('/', function(req, res, next){
 	}
 	// --------------------------------------------------------------------------------			
 
-
+	// ------------------------------------ SOLICITAÇÕES ------------------------------
+	// solicitação de serviço
+	if (req.query.funcao == 'solicitaServico') {
+		var sql = 'INSERT INTO ORDEMSERVICO (SERVICO_IDSERVICO, HOSPEDE_IDHOSPEDE, QUANTIDADE) VALUES ("' + req.query.idservico + '", "' + req.query.idhospede + '", "' + req.query.quantidade + '")';
+		rodaSql(sql, function() {
+			res.send({});
+		});	
+	}
+	// --------------------------------------------------------------------------------			
 });
 
 // iniciando o servidor

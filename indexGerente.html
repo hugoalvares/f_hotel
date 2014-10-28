@@ -45,13 +45,13 @@
                 </ul>
             </div>
             <div id="conteudo">
-            	hóspede
-            	<input type="text" id="idhospede">
+            	operador
+            	<input type="text" id="idoperador">
             	<br>
             	senha
             	<input type="text" id="senha">            	
             	<br>
-            	<button type="button" onclick="jsHospede.loginHospede();">entrar</button>
+            	<button type="button" onclick="jsOperador.loginOperador();">entrar</button>
             </div>
         </div>
         <div id="footer">
@@ -60,6 +60,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#simple-menu').sidr();
+            js.modo = 'gerente';
         });
     </script>
 </html>
