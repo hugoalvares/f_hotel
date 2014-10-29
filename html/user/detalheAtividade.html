@@ -1,59 +1,19 @@
-<html>
-    <head>
-       <meta charset="UTF-8"/>
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <script src="js/jquery-2.1.1.js"></script>
-       <script src="menuplugin/jquery.sidr.min.js"></script>
-       <script src="js/controle.js"></script>
-       <script src="js/jsAtividade.js"></script>
-       <link rel="stylesheet" type="text/css" href="css/style.css" />
-       <link rel="stylesheet" href="menuplugin/stylesheets/jquery.sidr.dark.css">
-       <title>Hotel</title>
-    </head>
-    <body>
-        <div id="header">
-            <div id="simple-menu" href="#sidr">
-                <div class="menu-icon" onclick="js.ajustaHeader();"> </div> </div>
-           <div class="iativ"> </div> <div class="thename">&nbsp; ATIVIDADES </div>
-                <div class="notification" onclick="js.abreSolicitacoes();"> </div>
-        </div>
-        <div id="body">
-            <div id="sidr">
-                <ul>
-                    <li><a href="#" onclick="js.abreCardapio();" class="aicon"><div class="icard"></div>&nbsp;CARDÁPIO</a></li>
-                    <li><a href="#" onclick="js.abreServicos();" class="aicon"><div class="iserv"></div>&nbsp;SERVIÇO DE QUARTO</a></li>
-                    <li><a href="#" onclick="js.abreAtividades();" class="aicon"><div class="iativ"></div>&nbsp;ATIVIDADES</a></li>
-                    <li><a href="#" onclick="js.abreInstalacoes();" class="aicon"><div class="iinst"></div>&nbsp;INSTALAÇÕES</a></li>
-                    <li><a href="#" onclick="js.abreParcial();" class="aicon"><div class="iparc"></div>&nbsp;PARCIAL DO CONSUMO</a></li>
-                    <li><a href="#" onclick="js.abreCheckout();" class="aicon"><div class="isol"></div>&nbsp;SOLICITAR CHECKOUT</a></li>
-                </ul>
-            </div>
-            <div id="conteudo" class="conteudo">
-                <div class="titdesc">DESCRIÇÃO</div>
-                <div class="descativ"> Esta atividade é uma atividade muito ativa que te permite ativar aquelas partes que estavam desativadas devido não terem sido ativadas por um longo período de tempo. Nossos profissionais são preparados para te atender da melhor maneira possível com toda qualidade e profissionalismo que você já conhece.</div>
-                <div class="list2col">
-                <div class="l2chead"><div class="l2chesq"> DISPONIBILIDADE </div> <div class="l2chdir"> PROFISSIONAL </div></div>
-                <div class="l2cesq"><div class="l2crow">09/10 - 09:30</div><div class="l2crow">10/10 - 14:30</div><div class="l2crow">10/10 - 15:50</div>
-                
-                </div><!-- FIM COLUNA ESQUERDA -->
-                <div class="l2cdir"><div class="l2crow">LEOZAO VEM MONXSTRO</div><div class="l2crow">AECIO SNOW</div><div class="l2crow">CARA QUE DELICIA</div>
-                
-                
-                </div><!-- FIM COLUNA DIREITA -->
-                </div><!-- FIM TABELA -->
-                
-                
-                
-                
-            </div>
-        </div>
-        <div id="footer">
-            <div class="refresh-icon"> </div>
-        </div>
-    </body>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#simple-menu').sidr();
-        });
-    </script>
-</html>
+<div id="tela" name="detalheAtividade"></div>
+<div id="idservico" class="hidden">
+</div>
+<div id="nome" class="titdesc">DESCRIÇÃO</div>
+<div id="descricao" class="descativ"> Esta atividade é uma atividade muito ativa que te permite ativar aquelas partes que estavam desativadas devido não terem sido ativadas por um longo período de tempo. Nossos profissionais são preparados para te atender da melhor maneira possível com toda qualidade e profissionalismo que você já conhece.</div>
+
+    <div class="list2col">
+        <div class="l2chead"><div class="l2chesq"> DISPONIBILIDADE </div> <div class="l2chdir"> PROFISSIONAL </div></div>
+            <div class="l2cesq">
+                <div class="l2crow">09/10 - 09:30</div>
+                <div class="l2crow">10/10 - 14:30</div>
+                <div class="l2crow">10/10 - 15:50</div>
+            </div><!-- FIM COLUNA ESQUERDA -->
+            <div class="l2cdir">
+                <div class="l2crow">LEOZAO VEM MONXSTRO</div>
+                <div class="l2crow">AECIO SNOW</div>
+                <div class="l2crow">CARA QUE DELICIA</div>
+            </div><!-- FIM COLUNA DIREITA -->
+    </div><!-- FIM TABELA -->

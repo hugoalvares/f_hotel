@@ -318,7 +318,7 @@ body {
 
 .thecampo {
     height: 50px;
-    width: 300px;
+    width: 400px;
     margin-top: 10px;
     text-transform: uppercase;
 }
@@ -334,4 +334,25 @@ body {
 input {
     line-height: 25px;
     width: 200px;
+}
+
+/* TELA DE LOGIN */
+
+.loginform {
+    width: 200px;
+    height: auto;
+    margin:  0 auto;
+    margin-top: 160px;
+}
+
+button {
+    line-height: 50px;
+    font-weight: 550;
+    background-color: #1bbc9b;
+    text-align: center;
+    color: white;
+    width: 203px;
+    margin-top: 20px;
+    border: none;
+    
 }
