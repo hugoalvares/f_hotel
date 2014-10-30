@@ -1,5 +1,6 @@
 var js = {
 
+    ipServidor : 'http://localhost',
   	modo : 'gerente',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
@@ -225,8 +226,10 @@ var js = {
     	$('#tituloIcone').toggleClass(novoIcone);
     },
 
-    montaItemLista : function(id, funcao, nome) {
-		return '<div class="apbloco" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
+
+    montaItemLista : function(id, funcao, nome, pasta) {
+    	pasta = 'servicos';
+		return '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/hotel/img/' + pasta + '/' + id + '.jpg);" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
     },
 
     abreTelaInicial : function() {

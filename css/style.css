@@ -213,6 +213,7 @@ body {
     background-color: blue;
     height: 100px;
     margin-bottom: 30px;
+    background-size: cover;
 }
 
 .blocotitle {
