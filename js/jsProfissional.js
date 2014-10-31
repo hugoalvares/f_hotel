@@ -36,7 +36,7 @@ var jsProfissional = {
 		var div = '';
 		for (var idx in profissionais) {
 			profissional = profissionais[idx];
-			div = div + js.montaItemLista(profissional.idprofissional, 'jsProfissional.clickProfissional(this.id);', profissional.nome);
+			div = div + js.montaItemLista(profissional.idprofissional, 'jsProfissional.clickProfissional(this.id);', profissional.nome, 'profissional');
 		}
 		div = div + '<div id="tela" name="listaProfissionais"></div>';
 		$("#conteudo").html(div);

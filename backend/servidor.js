@@ -138,9 +138,9 @@ app.get('/', function(req, res, next){
 	if (req.query.funcao == 'salvaHospede') {
 		var sql;
 		if (req.query.idhospede) { // registro existente
-			sql = 'UPDATE HOSPEDE SET NOME = "' + req.query.nome + '", QUARTO = "' + req.query.quarto + '" WHERE IDHOSPEDE = "' + req.query.idhospede + '"';
+			sql = 'UPDATE HOSPEDE SET NOME = "' + req.query.nome + '", QUARTO = "' + req.query.quarto + '", SENHA = "' + req.query.senha + '" WHERE IDHOSPEDE = "' + req.query.idhospede + '"';
 		} else { // novo registro
-			sql = 'INSERT INTO HOSPEDE (NOME, QUARTO) VALUES ("' + req.query.nome + '", "' + req.query.quarto + '")';
+			sql = 'INSERT INTO HOSPEDE (NOME, QUARTO, SENHA) VALUES ("' + req.query.nome + '", "' + req.query.quarto + '", "' + req.query.senha + '")';
 		}
 		rodaSql(sql, function() {
 			res.send({});
@@ -180,9 +180,9 @@ app.get('/', function(req, res, next){
 	if (req.query.funcao == 'salvaOperador') {
 		var sql;
 		if (req.query.idoperador) { // registro existente
-			sql = 'UPDATE OPERADOR SET NOME = "' + req.query.nome + '", TIPOOPERADOR = "' + req.query.tipooperador + '" WHERE IDOPERADOR = "' + req.query.idoperador + '"';
+			sql = 'UPDATE OPERADOR SET NOME = "' + req.query.nome + '", TIPOOPERADOR = "' + req.query.tipooperador + '", SENHA = "' + req.query.senha + '" WHERE IDOPERADOR = "' + req.query.idoperador + '"';
 		} else { // novo registro
-			sql = 'INSERT INTO OPERADOR (NOME, TIPOOPERADOR) VALUES ("' + req.query.nome + '", "' + req.query.tipooperador + '")';
+			sql = 'INSERT INTO OPERADOR (NOME, TIPOOPERADOR, SENHA) VALUES ("' + req.query.nome + '", "' + req.query.tipooperador + '", "' + req.query.senha + '")';
 		}
 		rodaSql(sql, function() {
 			res.send({});

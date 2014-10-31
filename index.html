@@ -19,6 +19,7 @@
        <script src="js/jsProfissional.js"></script>
        <script src="js/jsGrupo.js"></script>
        <script src="js/jsProduto.js"></script>
+       <script src="js/jsCardapio.js"></script>
        <!-- FIM -->
 
        <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -36,8 +37,6 @@
             <div id="titulo" class="thename">
             	MYROOM
             </div>
-            <div class="notification" onclick="js.abreSolicitacoes();">
-            </div>
         </div>
         <div id="body">
             <div id="sidr">
@@ -45,14 +44,20 @@
                 </ul>
             </div>
             <div id="conteudo">
-            <div class="loginform">
-            	<div class="ccadi" > HÓSPEDE </div>
-            	<input type="text" id="idhospede">
-            	<br>
-            	<div class="ccadi" > SENHA </div>
-            	<input type="password" id="senha">            	
-            	<br>
-            	<button type="button" onclick="jsHospede.loginHospede();">ENTRAR</button>
+            	<div class="loginform">
+	            	<div class="ccadi" >
+	            		HÓSPEDE
+	            	</div>
+	            	<input type="text" id="idhospede">
+	            	<br>
+	            	<div class="ccadi" > 
+	            		SENHA
+	        		</div>
+	            	<input type="password" id="senha">            	
+	            	<br>
+	            	<button type="button" onclick="jsHospede.loginHospede();">
+	            		ENTRAR
+	        		</button>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@ var jsInstalacao = {
 		var div = '';
 		for (var idx in instalacoes) {
 			instalacao = instalacoes[idx];
-			div = div + js.montaItemLista(instalacao.idinstalacao, 'jsInstalacao.clickInstalacao(this.id);', instalacao.nome);
+			div = div + js.montaItemLista(instalacao.idinstalacao, 'jsInstalacao.clickInstalacao(this.id);', instalacao.nome, 'instalacao');
 		}
 		div = div + '<div id="tela" name="listaInstalacoes"></div>';
 		$("#conteudo").html(div);
@@ -49,7 +49,7 @@ var jsInstalacao = {
 		if (js.modoGerente()) {
 			jsInstalacao.abreAlteraInstalacao();
 		} else {
-			jsInstalacao.abreDetalheInstalacao();
+			jsInstalacao.abreDetalheInstalacao(instalacao);
 		}
 	},	
 
@@ -62,10 +62,23 @@ var jsInstalacao = {
 		// troca o conteúdo da página
 		jsInstalacao.abreCadastroInstalacao();
 		// preenche os campos
-		jsInstalacao.buscaUmaInstalacao(jsInstalacao.instalacaoAtual);
+		jsInstalacao.buscaUmaInstalacao(jsInstalacao.instalacaoAtual, function(instalacao) {
+			js.preencheFormulario(instalacao);
+			js.trocaRodape('cadastro');
+		});
 	},	
 
-	buscaUmaInstalacao : function(idinstalacao) {
+	abreDetalheInstalacao : function(idinstalacao) {
+		jsInstalacao.buscaUmaInstalacao(idinstalacao, function(instalacao) {
+			// tela, título, ícone, footer
+			js.trocaTela('detalheInstalacao.html', instalacao.nome, 'iinst', 'footerVoltar');
+			setTimeout(function(){
+				js.preencheDetalhe(instalacao);
+			}, 100);
+		});		
+	},	
+
+	buscaUmaInstalacao : function(idinstalacao, callback) {
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "buscaUmaInstalacao",
@@ -77,8 +90,7 @@ var jsInstalacao = {
 			params,
 			// callback
 			function (instalacao) {
-				js.preencheFormulario(instalacao);
-				js.trocaRodape('cadastro');
+				callback(instalacao);
 			}
 		);
 	},

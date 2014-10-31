@@ -36,7 +36,7 @@ var jsAtividade = {
 		var div = '';
 		for (var idx in atividades) {
 			atividade = atividades[idx];
-			div = div + js.montaItemLista(atividade.idatividade, 'jsAtividade.clickAtividade(this.id);', atividade.nome);
+			div = div + js.montaItemLista(atividade.idatividade, 'jsAtividade.clickAtividade(this.id);', atividade.nome, 'atividade');
 		}
 		div = div + '<div id="tela" name="listaAtividades"></div>';
 		$("#conteudo").html(div);
@@ -49,7 +49,7 @@ var jsAtividade = {
 		if (js.modoGerente()) {
 			jsAtividade.abreAlteraAtividade();
 		} else {
-			jsAtividade.abreDetalheAtividade();
+			jsAtividade.abreDetalheAtividade(atividade);
 		}
 	},	
 
@@ -62,10 +62,23 @@ var jsAtividade = {
 		// troca o conteúdo da página
 		jsAtividade.abreCadastroAtividade();
 		// preenche os campos
-		jsAtividade.buscaUmaAtividade(jsAtividade.atividadeAtual);
+		jsAtividade.buscaUmaAtividade(jsAtividade.atividadeAtual, function(atividade) {
+			js.preencheFormulario(atividade);
+			js.trocaRodape('cadastro');
+		});
 	},
 
-	buscaUmaAtividade : function(idatividade) {
+	abreDetalheAtividade : function(idatividade) {
+		jsAtividade.buscaUmaAtividade(idatividade, function(atividade) {
+			// tela, título, ícone, footer
+			js.trocaTela('detalheAtividade.html', atividade.nome, 'iinst', 'footerDetalheAtividade');
+			setTimeout(function(){
+				js.preencheDetalhe(atividade);
+			}, 100);
+		});		
+	},	
+
+	buscaUmaAtividade : function(idatividade, callback) {
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "buscaUmaAtividade",
@@ -77,8 +90,7 @@ var jsAtividade = {
 			params,
 			// callback
 			function (atividade) {
-				js.preencheFormulario(atividade);
-				js.trocaRodape('cadastro');
+				callback(atividade);
 			}
 		);
 	},	

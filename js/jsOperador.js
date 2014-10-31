@@ -36,7 +36,7 @@ var jsOperador = {
 		var div = '';
 		for (var idx in operadores) {
 			operador = operadores[idx];
-			div = div + js.montaItemLista(operador.idoperador, 'jsOperador.clickOperador(this.id);', operador.nome);
+			div = div + js.montaItemLista(operador.idoperador, 'jsOperador.clickOperador(this.id);', operador.nome, 'operador');
 		}
 		div = div + '<div id="tela" name="listaOperadores"></div>';
 		$("#conteudo").html(div);
@@ -91,13 +91,15 @@ var jsOperador = {
 		var idoperador = $('#idoperador').val();
 		var nome = $('#nome').val();
 		var tipooperador = $('#tipooperador').val();
+		var senha = $('#senha').val();
 
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "salvaOperador",
 			"idoperador" : idoperador,
 			"nome" : nome,
-			"tipooperador" : tipooperador
+			"tipooperador" : tipooperador,
+			"senha" : senha
 		}
 
 		// chama o backend

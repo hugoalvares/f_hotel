@@ -36,7 +36,7 @@ var jsHospede = {
 		var div = '';
 		for (var idx in hospedes) {
 			hospede = hospedes[idx];
-			div = div + js.montaItemLista(hospede.idhospede, 'jsHospede.clickHospede(this.id);', hospede.nome);
+			div = div + js.montaItemLista(hospede.idhospede, 'jsHospede.clickHospede(this.id);', hospede.nome, 'hospede');
 		}
 		div = div + '<div id="tela" name="listaHospedes"></div>';
 		$("#conteudo").html(div);
@@ -91,13 +91,15 @@ var jsHospede = {
 		var idhospede = $('#idhospede').val();
 		var nome = $('#nome').val();
 		var quarto = $('#quarto').val();
+		var senha = $('#senha').val();
 
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "salvaHospede",
 			"idhospede" : idhospede,
 			"nome" : nome,
-			"quarto" : quarto
+			"quarto" : quarto,
+			"senha" : senha
 		}
 
 		// chama o backend

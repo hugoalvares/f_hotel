@@ -36,7 +36,7 @@ var jsServico = {
 		var div = '';
 		for (var idx in servicos) {
 			servico = servicos[idx];
-			div = div + js.montaItemLista(servico.idservico, 'jsServico.clickServico(this.id);', servico.nome);
+			div = div + js.montaItemLista(servico.idservico, 'jsServico.clickServico(this.id);', servico.nome, 'servico');
 		}
 		div = div + '<div id="tela" name="listaServicos"></div>';
 		$("#conteudo").html(div);

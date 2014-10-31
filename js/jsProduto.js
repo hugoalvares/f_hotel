@@ -36,7 +36,7 @@ var jsProduto = {
 		var div = '';
 		for (var idx in produtos) {
 			produto = produtos[idx];
-			div = div + js.montaItemLista(produto.idproduto, 'jsProduto.clickProduto(this.id);', produto.nome);
+			div = div + js.montaItemLista(produto.idproduto, 'jsProduto.clickProduto(this.id);', produto.nome, 'produto');
 		}
 		div = div + '<div id="tela" name="listaProdutos"></div>';
 		$("#conteudo").html(div);

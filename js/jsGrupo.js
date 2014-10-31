@@ -38,7 +38,7 @@ var jsGrupo = {
 		var div = '';
 		for (var idx in grupos) {
 			grupo = grupos[idx];
-			div = div + js.montaItemLista(grupo.idgrupo, 'jsGrupo.clickGrupo(this.id);', grupo.nome);
+			div = div + js.montaItemLista(grupo.idgrupo, 'jsGrupo.clickGrupo(this.id);', grupo.nome, 'grupo');
 		}
 		div = div + '<div id="tela" name="listaGrupos"></div>';
 		$("#conteudo").html(div);
