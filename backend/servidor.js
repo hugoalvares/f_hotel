@@ -301,6 +301,22 @@ app.get('/', function(req, res, next){
 		});	
 	}
 	// --------------------------------------------------------------------------------			
+
+	// ------------------------------------ CARDÁPIO ----------------------------------
+	// busca o cardápio
+	if (req.query.funcao == 'buscaCardapio') {
+		var sql = 'SELECT * FROM GRUPO';
+		rodaSql(sql, function(grupos) {
+			var sql = 'SELECT * FROM PRODUTO';
+			rodaSql(sql, function(produtos) {
+				res.send({
+					'grupos' : grupos,
+					'produtos' : produtos
+				})				
+			});	
+		});	
+	}
+	// --------------------------------------------------------------------------------			
 });
 
 // iniciando o servidor
