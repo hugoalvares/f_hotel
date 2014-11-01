@@ -1,45 +1,45 @@
 var js = {
 
-    ipServidor : 'http://localhost',
+    ipServidor : 'http://127.0.0.1',
   	modo : 'gerente',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
   	login : {},
   	telas : {
   		// geral
-		'lista.html' : '/hotel/html/lista.html',
+		'lista.html' : '/html/lista.html',
 
 		// gerente
-		'cadastroAtividade.html' : '/hotel/html/gerente/cadastroAtividade.html',
-		'cadastroGrupo.html' : '/hotel/html/gerente/cadastroGrupo.html',
-		'cadastroHospede.html' : '/hotel/html/gerente/cadastroHospede.html',
-		'cadastroInstalacao.html' : '/hotel/html/gerente/cadastroInstalacao.html',
-		'cadastroOperador.html' : '/hotel/html/gerente/cadastroOperador.html',
-		'cadastroProduto.html' : '/hotel/html/gerente/cadastroProduto.html',
-		'cadastroProfissional.html' : '/hotel/html/gerente/cadastroProfissional.html',
-		'cadastroServico.html' : '/hotel/html/gerente/cadastroServico.html',
-		'inicioOperador.html' : '/hotel/html/gerente/inicioOperador.html',
+		'cadastroAtividade.html' : '/html/gerente/cadastroAtividade.html',
+		'cadastroGrupo.html' : '/html/gerente/cadastroGrupo.html',
+		'cadastroHospede.html' : '/html/gerente/cadastroHospede.html',
+		'cadastroInstalacao.html' : '/html/gerente/cadastroInstalacao.html',
+		'cadastroOperador.html' : '/html/gerente/cadastroOperador.html',
+		'cadastroProduto.html' : '/html/gerente/cadastroProduto.html',
+		'cadastroProfissional.html' : '/html/gerente/cadastroProfissional.html',
+		'cadastroServico.html' : '/html/gerente/cadastroServico.html',
+		'inicioOperador.html' : '/html/gerente/inicioOperador.html',
 
 		// user
-		'cardapio.html' : '/hotel/html/user/cardapio.html',
-		'checkout.html' : '/hotel/html/user/checkout.html',
-		'detalheAtividade.html' : '/hotel/html/user/detalheAtividade.html',
-		'detalheServico.html' : '/hotel/html/user/detalheServico.html',
-		'detalheInstalacao.html' : '/hotel/html/user/detalheInstalacao.html',
-		'inicioUser.html' : '/hotel/html/user/inicioUser.html',
-		'parcial.html' : '/hotel/html/user/parcial.html'
+		'cardapio.html' : '/html/user/cardapio.html',
+		'checkout.html' : '/html/user/checkout.html',
+		'detalheAtividade.html' : '/html/user/detalheAtividade.html',
+		'detalheServico.html' : '/html/user/detalheServico.html',
+		'detalheInstalacao.html' : '/html/user/detalheInstalacao.html',
+		'inicioUser.html' : '/html/user/inicioUser.html',
+		'parcial.html' : '/html/user/parcial.html'
   	},
   	footers : {
-  		'footerCadastro.html' : '/hotel/html/footer/footerCadastro.html',
-  		'footerLista.html' : '/hotel/html/footer/footerLista.html',
-  		'footerListaGerente.html' : '/hotel/html/footer/footerListaGerente.html',
-  		'footerServico.html' : '/hotel/html/footer/footerServico.html',
-  		'footerVoltar.html' : '/hotel/html/footer/footerVoltar.html',
-  		'footerDetalheAtividade.html' : '/hotel/html/footer/footerDetalheAtividade.html'
+  		'footerCadastro.html' : '/html/footer/footerCadastro.html',
+  		'footerLista.html' : '/html/footer/footerLista.html',
+  		'footerListaGerente.html' : '/html/footer/footerListaGerente.html',
+  		'footerServico.html' : '/html/footer/footerServico.html',
+  		'footerVoltar.html' : '/html/footer/footerVoltar.html',
+  		'footerDetalheAtividade.html' : '/html/footer/footerDetalheAtividade.html'
   	},
   	menus : {
-  		'menu.html' : '/hotel/html/menu/menu.html',
-  		'menuGerente.html' : '/hotel/html/menu/menuGerente.html'
+  		'menu.html' : '/html/menu/menu.html',
+  		'menuGerente.html' : '/html/menu/menuGerente.html'
   	},
 
   	modoGerente : function() {
@@ -242,7 +242,7 @@ var js = {
     },
 
     montaItemLista : function(id, funcao, nome, pasta) {
-		return '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/hotel/img/' + pasta + '/' + id + '.jpg);" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
+		return '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/img/' + pasta + '/' + id + '.jpg);" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
     },
 
     abreTelaInicial : function() {

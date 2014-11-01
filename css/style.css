@@ -1,7 +1,7 @@
 body { 
 	background-color: #ebf1f1;
     font-family: "Segoe UI";
-    font-size: 1.0em;
+    font-size: 62.5%;
 }
 
 #header {
@@ -13,6 +13,7 @@ body {
     right:0px;
     top: 0;
     z-index: 1;
+    font-size: 1.6em;
 }
 
 
@@ -20,10 +21,13 @@ body {
 	background-color: #ebf1f1;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 1.6em;
 }
 
 #conteudo {
     background-color: #ebf1f1;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #footer{
@@ -34,6 +38,7 @@ body {
     right:0px;
     height:50px;
     margin-bottom:0px;
+    font-size: 1.6em;
 }
 
 .menu{
@@ -212,7 +217,7 @@ body {
     margin-left: 2.5%;
     background-color: blue;
     height: 100px;
-    margin-bottom: 30px;
+    margin-top: 30px;
     background-size: cover;
 }
 
@@ -234,16 +239,19 @@ body {
 }
 
 .titdesc {
+    margin-top: 10px;
     margin-left: 12px;
-    font-weight: 800;
+    font-weight: 500;
+    font-size: 1.6em;
     color: #16a086;
 }
 
 .descativ {
     width: 95%;   
     color: #4d8b7c;
-    font-size: 14px;
+    font-size: 1.2em;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 .list2col {
@@ -356,4 +364,109 @@ button {
     margin-top: 20px;
     border: none;
     
+}
+
+.infocol {
+    width: auto;
+    margin-top: 20px;
+}
+
+.infocoll {
+    height: 40px;
+    width: 48%;
+    float: left;
+}
+
+.infocolr {
+    line-height: 40px;
+    width: 48%;
+    float: right;
+}
+
+.qntbox {
+    width: 100%;
+    height: 40px;
+}
+
+.qntinfo {
+    line-height: 40px;
+    text-align: center;
+    border-color: #51a291;
+    background-color: #1bbc9b;
+    color: white;
+    width: 70%;
+    border: 1px;
+    float: left;
+    
+}
+
+.qntdd {
+    height: 40px;
+    text-align: center;
+    width: 30%;
+    border: 1px solid #51a291;
+    background-color: white;
+    color: #51a291;
+    font-size: 1.0em;
+    float: left;
+}
+
+.pricebox {
+    line-height: 40px;
+    background-color: #1bbc9b;
+    color: white;
+    border: 1px solid #51a291;
+}
+
+.priceinfo {
+    width: 70%;
+    float: left;
+    background-color: #1bbc9b;
+    text-align: center;
+}
+
+.theprice {
+    width: 29%;
+    float:left; 
+    background-color: #1bbc9b;
+    text-align: center;
+}
+
+/* Cardapio */
+
+.c2iinfo {
+    line-height: 40px;
+    padding-left: 5px;
+    background-color: #1bbc9b;
+    color: white;
+    width: 60%;
+    float: left;
+    
+}
+
+.c2iqntdd {
+    height: 40px;
+    text-align: center;
+    width: 40%;
+    border: 1px solid #51a291;
+    background-color: white;
+    color: #51a291;
+    font-size: 1.0em;
+    float: left;
+}
+
+.titcard {
+    margin-top: 10px;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #16a086;
+}
+
+.desccard {
+    width: 100%;   
+    color: #4d8b7c;
+    font-size: 1.0em;
+    margin: 0 auto;
+    margin-top: 10px;
 }
