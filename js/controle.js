@@ -26,6 +26,7 @@ var js = {
 		'detalheAtividade.html' : '/hotel/html/user/detalheAtividade.html',
 		'detalheServico.html' : '/hotel/html/user/detalheServico.html',
 		'detalheInstalacao.html' : '/hotel/html/user/detalheInstalacao.html',
+		'detalheProduto.html' : '/hotel/html/user/detalheProduto.html',
 		'inicioUser.html' : '/hotel/html/user/inicioUser.html',
 		'parcial.html' : '/hotel/html/user/parcial.html'
   	},
@@ -35,7 +36,8 @@ var js = {
   		'footerListaGerente.html' : '/hotel/html/footer/footerListaGerente.html',
   		'footerServico.html' : '/hotel/html/footer/footerServico.html',
   		'footerVoltar.html' : '/hotel/html/footer/footerVoltar.html',
-  		'footerDetalheAtividade.html' : '/hotel/html/footer/footerDetalheAtividade.html'
+  		'footerDetalheAtividade.html' : '/hotel/html/footer/footerDetalheAtividade.html',
+  		'footerDetalheProduto.html' : '/hotel/html/footer/footerDetalheProduto.html'
   	},
   	menus : {
   		'menu.html' : '/hotel/html/menu/menu.html',
@@ -106,6 +108,8 @@ var js = {
   			$('#footer').load(js.footers['footerVoltar.html']);      
   		} else if (tipo == 'footerDetalheAtividade') {
   			$('#footer').load(js.footers['footerDetalheAtividade.html']);      
+  		} else if (tipo == 'footerDetalheProduto') {
+  			$('#footer').load(js.footers['footerDetalheProduto.html']);      
   		}
   	},
 
@@ -169,6 +173,10 @@ var js = {
         	js.trocaRodape('lista');
         } else if (js.telaAnterior == 'detalheAtividade.html') {
         	jsAtividade.abreAtividades();
+        	js.ajustaHeader();
+        	js.trocaRodape('lista');
+        } else if (js.telaAnterior == 'detalheProduto.html') {
+        	jsCardapio.abreCardapio();
         	js.ajustaHeader();
         	js.trocaRodape('lista');
         }

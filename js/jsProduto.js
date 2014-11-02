@@ -62,10 +62,16 @@ var jsProduto = {
 		// troca o conteúdo da página
 		jsProduto.abreCadastroProduto();
 		// preenche os campos
-		jsProduto.buscaUmProduto(jsProduto.produtoAtual);
+		jsProduto.buscaUmProduto(jsProduto.produtoAtual, function(produto) {
+			js.preencheFormulario(produto);
+			js.trocaRodape('cadastro');
+			jsGrupo.buscaGrupos(function(grupos){
+				jsGrupo.montaListaGrupos(grupos, produto.grupo_idgrupo);
+			});
+		});
 	},	
 
-	buscaUmProduto : function(idproduto) {
+	buscaUmProduto : function(idproduto, callback) {
 		// parâmetros para o backend
 		var params = {
 			"funcao" : "buscaUmProduto",
@@ -77,11 +83,7 @@ var jsProduto = {
 			params,
 			// callback
 			function (produto) {
-				js.preencheFormulario(produto);
-				js.trocaRodape('cadastro');
-				jsGrupo.buscaGrupos(function(grupos){
-					jsGrupo.montaListaGrupos(grupos, produto.grupo_idgrupo);
-				});
+				callback(produto);
 			}
 		);
 	},

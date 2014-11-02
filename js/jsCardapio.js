@@ -1,6 +1,7 @@
 jsCardapio = {
 
-	cardapio : {},
+	produtoAtual : '',
+	carrinho : [],
 
 	abreCardapio : function () {
 		// troca o conteúdo da página
@@ -33,45 +34,52 @@ jsCardapio = {
 	},	
 
 	montaCardapio : function(cardapio) {
-		/*
-		var grupo = '';
-		var produto = '';
-		var novoCardapio = {};
-		for (var idxGrupo in cardapio.grupos) {
-			grupo = cardapio.grupos[idxGrupo];
-			novoCardapio[grupo.idgrupo] = grupo;
-			for (var idxProduto in cardapio.produtos) {
-				produto = cardapio.produtos[idxProduto];
-				if (produto.grupo_idgrupo == grupo.idgrupo) {
-
-				}
-			}
-		}
-		*/
-
 		var grupos = cardapio.grupos;
 
 		var grupo = '';
 		var div = '';
 		for (var idx in grupos) {
 			grupo = grupos[idx];
-			div = div + js.montaItemLista(grupo.idgrupo, 'jsCardapio.abreGrupo(this.id);', grupo.nome, 'grupo');
+			div = div + '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/hotel/img/grupo/' + grupo.idgrupo + '.jpg);" id="' + grupo.idgrupo + '" onclick="jsCardapio.abreGrupo(this.id);"><div class="blocotitle"><div class="blcttl">' + grupo.nome + '</div></div></div><div id="produtos' + grupo.idgrupo + '" class="produto"></div>';
 		}
 		div = div + '<div id="tela" name="listaGrupos"></div>';
 		$("#conteudo").html(div);
 	},
 
 	abreGrupo : function(idgrupo) {
+		$('.produto').html('');
+
 		var produtos = jsCardapio.cardapio.produtos;
 		var produto = '';
-		var div = '';
+		var divs = '';
 		for (var idx in produtos) {
 			produto = produtos[idx];
 			if (produto.grupo_idgrupo == idgrupo) {
-				div = div + '<div id="produto' + produto.idproduto + '">' + produto.nome + '</div>';
+				divs = divs + '<div id="' + produto.idproduto + '" onclick="jsCardapio.abreDetalheProduto(this.id);">' + produto.nome + '</div>';
 			}
 		}
-		console.log($('#' + idgrupo).html());
+		$('#produtos' + idgrupo).html(divs);
+	},
+
+	abreDetalheProduto : function(idproduto) {
+		jsCardapio.produtoAtual = idproduto;
+		jsProduto.buscaUmProduto(idproduto, function(produto) {
+			// tela, título, ícone, footer
+			js.trocaTela('detalheProduto.html', produto.nome, 'icard', 'footerDetalheProduto');
+			setTimeout(function(){
+				js.preencheDetalhe(produto);
+				$('#imgproduto').attr('src', js.ipServidor + '/hotel/img/produto/' + produto.idproduto + '.jpg');
+			}, 100);
+		});		
+	},
+
+	adicionarAoCarrinho : function() {
+		var item = {
+			'idproduto' : $('#idproduto').val(),
+			'quantidade' : $('#quantidade').val()
+		}
+		jsCardapio.carrinho.push(item);
+		console.log(jsCardapio.carrinho);
 	}
 
 }
