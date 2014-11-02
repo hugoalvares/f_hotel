@@ -21,23 +21,23 @@ var js = {
 		'inicioOperador.html' : '/html/gerente/inicioOperador.html',
 
 		// user
-		'cardapio.html' : '/hotel/html/user/cardapio.html',
-		'checkout.html' : '/hotel/html/user/checkout.html',
-		'detalheAtividade.html' : '/hotel/html/user/detalheAtividade.html',
-		'detalheServico.html' : '/hotel/html/user/detalheServico.html',
-		'detalheInstalacao.html' : '/hotel/html/user/detalheInstalacao.html',
-		'detalheProduto.html' : '/hotel/html/user/detalheProduto.html',
-		'inicioUser.html' : '/hotel/html/user/inicioUser.html',
-		'parcial.html' : '/hotel/html/user/parcial.html'
+		'cardapio.html' : '/html/user/cardapio.html',
+		'checkout.html' : '/html/user/checkout.html',
+		'detalheAtividade.html' : '/html/user/detalheAtividade.html',
+		'detalheServico.html' : '/html/user/detalheServico.html',
+		'detalheInstalacao.html' : '/html/user/detalheInstalacao.html',
+		'detalheProduto.html' : '/html/user/detalheProduto.html',
+		'inicioUser.html' : '/html/user/inicioUser.html',
+		'parcial.html' : '/html/user/parcial.html'
   	},
   	footers : {
-  		'footerCadastro.html' : '/hotel/html/footer/footerCadastro.html',
-  		'footerLista.html' : '/hotel/html/footer/footerLista.html',
-  		'footerListaGerente.html' : '/hotel/html/footer/footerListaGerente.html',
-  		'footerServico.html' : '/hotel/html/footer/footerServico.html',
-  		'footerVoltar.html' : '/hotel/html/footer/footerVoltar.html',
-  		'footerDetalheAtividade.html' : '/hotel/html/footer/footerDetalheAtividade.html',
-  		'footerDetalheProduto.html' : '/hotel/html/footer/footerDetalheProduto.html'
+  		'footerCadastro.html' : '/html/footer/footerCadastro.html',
+  		'footerLista.html' : '/html/footer/footerLista.html',
+  		'footerListaGerente.html' : '/html/footer/footerListaGerente.html',
+  		'footerServico.html' : '/html/footer/footerServico.html',
+  		'footerVoltar.html' : '/html/footer/footerVoltar.html',
+  		'footerDetalheAtividade.html' : '/html/footer/footerDetalheAtividade.html',
+  		'footerDetalheProduto.html' : '/html/footer/footerDetalheProduto.html'
   	},
   	menus : {
   		'menu.html' : '/html/menu/menu.html',
@@ -58,7 +58,7 @@ var js = {
 
 	chamaServidor : function(params, callback) {
 		$.ajax({
-			url: "http://localhost:9090/",
+			url: "http://127.0.0.1:9090/",
 			type: "GET",
 			dataType: "json",
 			data: params,
