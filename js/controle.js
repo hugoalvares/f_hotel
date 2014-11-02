@@ -1,24 +1,24 @@
 var js = {
 
-    ipServidor : 'http://localhost',
+    ipServidor : 'http://127.0.0.1',
   	modo : 'gerente',
   	telaAnterior : '',
   	telaAtual : 'index.html', 
   	login : {},
   	telas : {
   		// geral
-		'lista.html' : '/hotel/html/lista.html',
+		'lista.html' : '/html/lista.html',
 
 		// gerente
-		'cadastroAtividade.html' : '/hotel/html/gerente/cadastroAtividade.html',
-		'cadastroGrupo.html' : '/hotel/html/gerente/cadastroGrupo.html',
-		'cadastroHospede.html' : '/hotel/html/gerente/cadastroHospede.html',
-		'cadastroInstalacao.html' : '/hotel/html/gerente/cadastroInstalacao.html',
-		'cadastroOperador.html' : '/hotel/html/gerente/cadastroOperador.html',
-		'cadastroProduto.html' : '/hotel/html/gerente/cadastroProduto.html',
-		'cadastroProfissional.html' : '/hotel/html/gerente/cadastroProfissional.html',
-		'cadastroServico.html' : '/hotel/html/gerente/cadastroServico.html',
-		'inicioOperador.html' : '/hotel/html/gerente/inicioOperador.html',
+		'cadastroAtividade.html' : '/html/gerente/cadastroAtividade.html',
+		'cadastroGrupo.html' : '/html/gerente/cadastroGrupo.html',
+		'cadastroHospede.html' : '/html/gerente/cadastroHospede.html',
+		'cadastroInstalacao.html' : '/html/gerente/cadastroInstalacao.html',
+		'cadastroOperador.html' : '/html/gerente/cadastroOperador.html',
+		'cadastroProduto.html' : '/html/gerente/cadastroProduto.html',
+		'cadastroProfissional.html' : '/html/gerente/cadastroProfissional.html',
+		'cadastroServico.html' : '/html/gerente/cadastroServico.html',
+		'inicioOperador.html' : '/html/gerente/inicioOperador.html',
 
 		// user
 		'cardapio.html' : '/hotel/html/user/cardapio.html',
@@ -40,8 +40,8 @@ var js = {
   		'footerDetalheProduto.html' : '/hotel/html/footer/footerDetalheProduto.html'
   	},
   	menus : {
-  		'menu.html' : '/hotel/html/menu/menu.html',
-  		'menuGerente.html' : '/hotel/html/menu/menuGerente.html'
+  		'menu.html' : '/html/menu/menu.html',
+  		'menuGerente.html' : '/html/menu/menuGerente.html'
   	},
 
   	modoGerente : function() {
@@ -250,7 +250,7 @@ var js = {
     },
 
     montaItemLista : function(id, funcao, nome, pasta) {
-		return '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/hotel/img/' + pasta + '/' + id + '.jpg);" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
+		return '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/img/' + pasta + '/' + id + '.jpg);" id="' + id + '" onclick="' + funcao + '"><div class="blocotitle"><div class="blcttl">' + nome + '</div></div></div>';
     },
 
     abreTelaInicial : function() {
