@@ -212,6 +212,16 @@ body {
     margin-top: 5px;
 }
 
+.cart-icon {
+	height: 40px;
+	width: 40px;
+	background-image: url("../img/cart.png");
+	background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
 .apbloco {
     width: 95%;
     margin-left: 2.5%;
