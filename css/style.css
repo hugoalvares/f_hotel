@@ -391,11 +391,9 @@ button {
 .qntinfo {
     line-height: 40px;
     text-align: center;
-    border-color: #51a291;
     background-color: #1bbc9b;
     color: white;
     width: 70%;
-    border: 1px;
     float: left;
     
 }
@@ -404,7 +402,6 @@ button {
     height: 40px;
     text-align: center;
     width: 30%;
-    border: 1px solid #51a291;
     background-color: white;
     color: #51a291;
     font-size: 1.0em;
@@ -415,7 +412,6 @@ button {
     line-height: 40px;
     background-color: #1bbc9b;
     color: white;
-    border: 1px solid #51a291;
 }
 
 .priceinfo {
@@ -434,9 +430,16 @@ button {
 
 /* Cardapio */
 
+.cardbox {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 40px;
+    margin-top: 5px;
+    
+}
+
 .c2iinfo {
-    line-height: 40px;
-    padding-left: 5px;
+    height: 40px;
     background-color: #1bbc9b;
     color: white;
     width: 60%;
@@ -448,7 +451,6 @@ button {
     height: 40px;
     text-align: center;
     width: 40%;
-    border: 1px solid #51a291;
     background-color: white;
     color: #51a291;
     font-size: 1.0em;

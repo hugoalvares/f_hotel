@@ -61,7 +61,7 @@ var js = {
 
 	chamaServidor : function(params, callback) {
 		$.ajax({
-			url: "http://localhost:9090/",
+			url: "http://127.0.0.1:9090/",
 			type: "GET",
 			dataType: "json",
 			data: params,

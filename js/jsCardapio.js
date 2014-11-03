@@ -40,7 +40,7 @@ jsCardapio = {
 		var div = '';
 		for (var idx in grupos) {
 			grupo = grupos[idx];
-			div = div + '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/hotel/img/grupo/' + grupo.idgrupo + '.jpg);" id="' + grupo.idgrupo + '" onclick="jsCardapio.abreGrupo(this.id);"><div class="blocotitle"><div class="blcttl">' + grupo.nome + '</div></div></div><div id="produtos' + grupo.idgrupo + '" class="produto"></div>';
+			div = div + '<div class="apbloco" style="background-image:url(' + js.ipServidor + '/img/grupo/' + grupo.idgrupo + '.jpg);" id="' + grupo.idgrupo + '" onclick="jsCardapio.abreGrupo(this.id);"><div class="blocotitle"><div class="blcttl">' + grupo.nome + '</div></div></div><div id="produtos' + grupo.idgrupo + '" class="produto"></div>';
 		}
 		div = div + '<div id="tela" name="listaGrupos"></div>';
 		$("#conteudo").html(div);
@@ -55,7 +55,7 @@ jsCardapio = {
 		for (var idx in produtos) {
 			produto = produtos[idx];
 			if (produto.grupo_idgrupo == idgrupo) {
-				divs = divs + '<div id="' + produto.idproduto + '" onclick="jsCardapio.abreDetalheProduto(this.id);">' + produto.nome + '</div>';
+				divs = divs + '<div class="cardbox"> <div id="' + produto.idproduto + '" class="c2iinfo" onclick="jsCardapio.abreDetalheProduto(this.id);">' + produto.nome + ' </div> <div class="c2iqntdd"> R$3,00 </div> </div>';
 			}
 		}
 		$('#produtos' + idgrupo).html(divs);
