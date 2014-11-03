@@ -472,3 +472,10 @@ button {
     margin: 0 auto;
     margin-top: 10px;
 }
+
+.img-produto {
+	max-width: 80%;
+	margin-top: 15px;
+	margin-left: 10%;
+	border: 2px solid #51a291;
+}
