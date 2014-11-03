@@ -7,7 +7,7 @@ jsCardapio = {
 		// troca o conteúdo da página
 		js.abreTela('lista.html');
 		// troca o rodapé pra lista
-		js.trocaRodape('lista');
+		js.trocaRodape('footerCardapio');
 		// busca e constrói o cardápio
 		jsCardapio.buscaCardapio();
 		// ajusta localização do header
@@ -75,11 +75,33 @@ jsCardapio = {
 
 	adicionarAoCarrinho : function() {
 		var item = {
-			'idproduto' : $('#idproduto').val(),
+			'idproduto' :  $('#idproduto').html(),
+			'nome' : $('#nome').html(),
 			'quantidade' : $('#quantidade').val()
 		}
 		jsCardapio.carrinho.push(item);
-		console.log(jsCardapio.carrinho);
+		jsCardapio.abreCardapio();
+		js.ajustaHeader();
+	},
+
+	abreCarrinho : function() {
+		js.trocaTela('carrinho.html', 'pedido', 'icard', 'footerCarrinho');		
+		setTimeout(function(){
+			jsCardapio.montaListaPedido();
+		}, 100);		
+	},
+
+	montaListaPedido : function() {
+		var produto = '';
+		var divs = '';
+		for (var idx in jsCardapio.carrinho) {
+			produto = jsCardapio.carrinho[idx];
+			if (produto.quantidade == '') {
+				produto.quantidade = '1';
+			}
+			divs = divs + '<div id="' + produto.idproduto + '">' + produto.quantidade + ' x ' + produto.nome + '</div>';
+		}
+		$('#conteudo').html(divs);	
 	}
 
 }

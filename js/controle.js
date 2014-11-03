@@ -7,18 +7,18 @@ var js = {
   	login : {},
   	telas : {
   		// geral
-		'lista.html' : '/html/lista.html',
+		'lista.html' : '/hotel/html/lista.html',
 
 		// gerente
-		'cadastroAtividade.html' : '/html/gerente/cadastroAtividade.html',
-		'cadastroGrupo.html' : '/html/gerente/cadastroGrupo.html',
-		'cadastroHospede.html' : '/html/gerente/cadastroHospede.html',
-		'cadastroInstalacao.html' : '/html/gerente/cadastroInstalacao.html',
-		'cadastroOperador.html' : '/html/gerente/cadastroOperador.html',
-		'cadastroProduto.html' : '/html/gerente/cadastroProduto.html',
-		'cadastroProfissional.html' : '/html/gerente/cadastroProfissional.html',
-		'cadastroServico.html' : '/html/gerente/cadastroServico.html',
-		'inicioOperador.html' : '/html/gerente/inicioOperador.html',
+		'cadastroAtividade.html' : '/hotel/html/gerente/cadastroAtividade.html',
+		'cadastroGrupo.html' : '/hotel/html/gerente/cadastroGrupo.html',
+		'cadastroHospede.html' : '/hotel/html/gerente/cadastroHospede.html',
+		'cadastroInstalacao.html' : '/hotel/html/gerente/cadastroInstalacao.html',
+		'cadastroOperador.html' : '/hotel/html/gerente/cadastroOperador.html',
+		'cadastroProduto.html' : '/hotel/html/gerente/cadastroProduto.html',
+		'cadastroProfissional.html' : '/hotel/html/gerente/cadastroProfissional.html',
+		'cadastroServico.html' : '/hotel/html/gerente/cadastroServico.html',
+		'inicioOperador.html' : '/hotel/html/gerente/inicioOperador.html',
 
 		// user
 		'cardapio.html' : '/hotel/html/user/cardapio.html',
@@ -28,7 +28,8 @@ var js = {
 		'detalheInstalacao.html' : '/hotel/html/user/detalheInstalacao.html',
 		'detalheProduto.html' : '/hotel/html/user/detalheProduto.html',
 		'inicioUser.html' : '/hotel/html/user/inicioUser.html',
-		'parcial.html' : '/hotel/html/user/parcial.html'
+		'parcial.html' : '/hotel/html/user/parcial.html',
+		'carrinho.html' : '/hotel/html/user/carrinho.html'
   	},
   	footers : {
   		'footerCadastro.html' : '/hotel/html/footer/footerCadastro.html',
@@ -37,11 +38,13 @@ var js = {
   		'footerServico.html' : '/hotel/html/footer/footerServico.html',
   		'footerVoltar.html' : '/hotel/html/footer/footerVoltar.html',
   		'footerDetalheAtividade.html' : '/hotel/html/footer/footerDetalheAtividade.html',
-  		'footerDetalheProduto.html' : '/hotel/html/footer/footerDetalheProduto.html'
+  		'footerDetalheProduto.html' : '/hotel/html/footer/footerDetalheProduto.html',
+  		'footerCardapio.html' : '/hotel/html/footer/footerCardapio.html',
+  		'footerCarrinho.html' : '/hotel/html/footer/footerCarrinho.html'
   	},
   	menus : {
-  		'menu.html' : '/html/menu/menu.html',
-  		'menuGerente.html' : '/html/menu/menuGerente.html'
+  		'menu.html' : '/hotel/html/menu/menu.html',
+  		'menuGerente.html' : '/hotel/html/menu/menuGerente.html'
   	},
 
   	modoGerente : function() {
@@ -89,8 +92,15 @@ var js = {
   		var valor;
   		for (var campo in dados) {
   			valor = dados[campo];
+  			if (campo == 'preco') {
+  				valor = js.formataPreco(valor);
+  			}
   			$('#' + campo).html(valor);
   		}
+  	},
+
+  	formataPreco : function(valor) {
+  		return 'R$ ' + valor.toFixed(2).replace('.', ',');
   	},
 
   	trocaRodape : function(tipo) {
@@ -110,6 +120,10 @@ var js = {
   			$('#footer').load(js.footers['footerDetalheAtividade.html']);      
   		} else if (tipo == 'footerDetalheProduto') {
   			$('#footer').load(js.footers['footerDetalheProduto.html']);      
+  		} else if (tipo == 'footerCardapio') {
+  			$('#footer').load(js.footers['footerCardapio.html']);      
+  		} else if (tipo == 'footerCarrinho') {
+  			$('#footer').load(js.footers['footerCarrinho.html']);      
   		}
   	},
 
@@ -178,7 +192,11 @@ var js = {
         } else if (js.telaAnterior == 'detalheProduto.html') {
         	jsCardapio.abreCardapio();
         	js.ajustaHeader();
-        	js.trocaRodape('lista');
+        	js.trocaRodape('footerCardapio');
+        } else if (js.telaAnterior == 'carrinho.html') {
+        	jsCardapio.abreCardapio();
+        	js.ajustaHeader();
+        	js.trocaRodape('footerCardapio');
         }
   	},
 
