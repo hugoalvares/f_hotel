@@ -386,6 +386,7 @@ button {
 .qntbox {
     width: 100%;
     height: 40px;
+    border: 1px solid #51a291;
 }
 
 .qntinfo {
@@ -422,7 +423,7 @@ button {
 }
 
 .theprice {
-    width: 29%;
+    width: 30%;
     float:left; 
     background-color: #1bbc9b;
     text-align: center;
@@ -440,14 +441,15 @@ button {
 
 .c2iinfo {
     height: 40px;
-    background-color: #1bbc9b;
     color: white;
+    background-color: #1bbc9b;
     width: 60%;
     float: left;
     
 }
 
 .c2iqntdd {
+ /*   border-left: 1px solid #51a291; */
     height: 40px;
     text-align: center;
     width: 40%;
