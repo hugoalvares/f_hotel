@@ -123,6 +123,10 @@ var jsAtividade = {
 				js.abreTelaAnterior();
 			}
 		);
+	},
+
+	agendarAtividade : function() {
+		alert('Atividade agendada com sucesso.');
 	}
 
 };
